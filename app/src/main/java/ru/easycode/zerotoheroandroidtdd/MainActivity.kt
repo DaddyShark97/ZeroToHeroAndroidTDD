@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             val state = count.increment(textView.text.toString())
             state.apply(textView, button)
 
+
         }
     }
 
