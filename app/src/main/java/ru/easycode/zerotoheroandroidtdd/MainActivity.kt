@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             viewModel.load()
         }
 
+
         viewModel.liveData().observe(this) { uiState ->
             uiState.apply(button, progressBar, textView)
 
