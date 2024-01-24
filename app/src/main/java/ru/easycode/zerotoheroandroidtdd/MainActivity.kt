@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
             savedInstanceState.getSerializable(KEY) as UiState
         }
         uiState.apply(decrementButton, incrementButton, textView)
+
     }
 
     companion object {
