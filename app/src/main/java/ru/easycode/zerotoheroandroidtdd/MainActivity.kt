@@ -1,11 +1,33 @@
 package ru.easycode.zerotoheroandroidtdd
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val textView : TextView = findViewById(R.id.titleTextView)
+        val button : Button = findViewById(R.id.changeButton)
+
+        button.setOnClickListener{
+
+            textView.text = "I am an Android Developer!"
+            textView.setBackgroundColor(Color.GREEN)
+        }
+        if (savedInstanceState != null) {
+            textView.text = savedInstanceState.getString("text", "Hello World!")
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        val textView : TextView = findViewById(R.id.titleTextView)
+        outState.putString("text", textView.text.toString())
+
     }
 }
